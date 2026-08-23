@@ -40,7 +40,7 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                
-                .requestMatchers("/api/ai/**", "/api/auth/**", "/api/products/**", "/api/tickets/**", "/api/customers/**", "/api/orders/**", "/api/knowledge/**").permitAll()
+                .requestMatchers("/api/ai/**", "/api/auth/**", "/api/products/**", "/api/tickets/**", "/api/customers/**", "/api/orders/**", "/api/knowledge/**", "/api/analytics/**").permitAll()
                 .anyRequest().authenticated()
             );
 
