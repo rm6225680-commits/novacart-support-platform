@@ -89,6 +89,14 @@ public class Product {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
+	// Getters and Setters (Description)
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
 	@Column(nullable = false, length = 100)
     private String category; // e.g., Electronics, Appliances
@@ -105,4 +113,6 @@ public class Product {
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+    @Column(length = 500)
+    private String description;
 }
