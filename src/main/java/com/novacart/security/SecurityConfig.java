@@ -39,12 +39,11 @@ public class SecurityConfig {
             .cors(cors -> cors.configure(http))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                //
-                .requestMatchers("/api/ai/**", "/api/auth/**", "/api/products/**").permitAll()
+              
+                .requestMatchers("/api/ai/**", "/api/auth/**", "/api/products/**", "/api/tickets/**", "/api/customers/**").permitAll()
                 .anyRequest().authenticated()
             );
 
-        
         http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
